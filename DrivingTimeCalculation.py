@@ -24,7 +24,7 @@ db = sqlite3.connect('McD.db')
 
 cur = db.cursor()
 
-AllNYMcDonalds = cur.execute('''SELECT STORENUMBER, CITY, LATITUDE, LONGITUDE from MCDLocations where State = 'AK' ''')
+AllNYMcDonalds = cur.execute('''SELECT STORENUMBER, CITY, LATITUDE, LONGITUDE from MCDLocations where State = 'NY' ''')
 
 for EachNYMcDonald in AllNYMcDonalds:
     lst_McDonaldsNewYork_All.append(EachNYMcDonald)

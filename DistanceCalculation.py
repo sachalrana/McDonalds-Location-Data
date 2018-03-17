@@ -22,7 +22,7 @@ db = sqlite3.connect('McD.db')
 print "Database connection successful"
 
 cur = db.cursor()
-SQLQuery_NearByMCD = '''SELECT STORENUMBER, CITY, LATITUDE, LONGITUDE, STATE from MCDLocations where State = 'AK'
+SQLQuery_NearByMCD = '''SELECT STORENUMBER, CITY, LATITUDE, LONGITUDE, STATE from MCDLocations where State = 'NY'
                         or State = 'NJ' or State = 'MA' or State = 'CT' or State = 'OH' or State = 'RI' 
                         or State = 'VT' or State = 'DE' or State = 'NH' or State = 'NY' '''
                         
@@ -31,7 +31,7 @@ lst_OtherMcDonalds = AllMcDonaldsNearByNY.fetchall()
 
 
 cur = db.cursor()
-AllNYMcDonalds = cur.execute('''SELECT STORENUMBER, CITY, LATITUDE, LONGITUDE, STATE from MCDLocations where State = 'AK' ''')
+AllNYMcDonalds = cur.execute('''SELECT STORENUMBER, CITY, LATITUDE, LONGITUDE, STATE from MCDLocations where State = 'NY' ''')
 lst_NYMcDonalds = AllNYMcDonalds.fetchall()
 #
 for EachMcD in lst_NYMcDonalds: 
